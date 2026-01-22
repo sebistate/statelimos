@@ -827,21 +827,6 @@ body.loaded .hero-logo {
     filter: brightness(1.2) drop-shadow(0 0 6px rgba(216,201,163,0.8));
 }
 
-/* MOBILE – doar icon */
-@media (max-width: 768px) {
-    .whatsapp-float span {
-        display: none;
-    }
-
-    .whatsapp-float {
-        padding: 14px;
-        border-radius: 50%;
-    }
-}
-
-#areas {
-    padding-top: 60px;   /* era 120px */
-}
 
 /* =========================
    MOBILE FIX (GLOBAL)
@@ -872,7 +857,7 @@ body.loaded .hero-logo {
     /* ===== HERO ===== */
     .hero-frame {
         width: 94%;
-        height: 360px;
+        height: 330px;
         padding: 10px;
     }
 
