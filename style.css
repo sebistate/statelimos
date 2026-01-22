@@ -199,6 +199,8 @@ nav ul li a:hover {
 ========================= */
 .hero-image img:first-child {
     transition: opacity 0.5s ease;
+    position: relative;
+    z-index: 0;
 }
 
 .fleet {
@@ -546,7 +548,8 @@ nav ul li a:hover {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-    .hero-frame {
+     .hero-frame {
+    position: relative;
         height: 350px;
     }
 
