@@ -22,6 +22,7 @@ html {
 }
 
 body {
+    padding-top: 200px;
     font-family: 'PlayfairDisplay', serif;
     background: #000;
     color: #fff;
@@ -31,6 +32,7 @@ body {
    HEADER + MENIU
 ========================= */
 header {
+    height: 200px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -107,11 +109,12 @@ nav ul li a:hover {
    HERO FRAME
 ========================= */
 .hero-frame {
+    margin: 0 auto;
     width: 68%;          /* era 92% */
     max-width: 1400px;   /* era 1500px */
     height: 740px;       /* era 800px */
 
-    margin: 100px auto 0;
+/*    margin: 100px auto 0; */
     padding: 16px;       /* rama mai fină */
 
     border: 2px solid rgba(216,201,163,0.6);
