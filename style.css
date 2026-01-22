@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    padding-top: 200px;
+    padding-top: 110px;
     font-family: 'PlayfairDisplay', serif;
     background: #000;
     color: #fff;
@@ -51,7 +51,7 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: 40px 0 120px; /* sus mai mult, jos mai puțin */
+    padding: 34px 0 0px; /* sus mai mult, jos mai puțin */
 }
 
 nav ul li {
@@ -109,12 +109,11 @@ nav ul li a:hover {
    HERO FRAME
 ========================= */
 .hero-frame {
-    margin: 0 auto;
     width: 68%;          /* era 92% */
     max-width: 1400px;   /* era 1500px */
     height: 740px;       /* era 800px */
 
-/*    margin: 100px auto 0; */
+    margin: 0 auto;
     padding: 16px;       /* rama mai fină */
 
     border: 2px solid rgba(216,201,163,0.6);
@@ -269,8 +268,7 @@ nav ul li a:hover {
    SECTIUNI
 ========================= */
 .section {
-    min-height: 100vh;
-    padding: 120px 10%;
+    padding: 60px 10%;
 }
 
 .section.alt {
