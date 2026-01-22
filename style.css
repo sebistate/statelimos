@@ -1,0 +1,677 @@
+/* =========================
+   FONT
+========================= */
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('PlayfairDisplay-Black.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* =========================
+   RESET + GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'PlayfairDisplay', serif;
+    background: #000;
+    color: #fff;
+}
+
+/* =========================
+   HEADER + MENIU
+========================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.95),
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.25),
+        transparent
+    );
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    display: inline-block;   /* ⭐ CHEIA */
+    position: relative;      /* ⭐ NECESAR pentru ::after */
+
+    text-decoration: none;
+    border: none;
+    color: #d8c9a3;
+    font-size: 26px;
+    letter-spacing: 1px;
+    text-shadow:
+        0 1px 1px rgba(0,0,0,1),
+        0 3px 8px rgba(0,0,0,0.9);
+}
+
+/* LINIA */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 10%;
+    bottom: -6px;
+
+    width: 80%;
+    height: 1px;
+    background: #d8c9a3;
+
+    transform: scaleX(0);
+    transform-origin: center; /* CHEIA */
+    transition: transform 0.25s ease;
+}
+
+nav ul li a.active::after {
+    transform: scaleX(1);
+}
+
+/* LINK ACTIV */
+nav ul li a.active::after {
+    transform: scaleX(1);
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+#acasa {
+    scroll-margin-top: 180px; /* înălțimea header-ului */
+}
+
+/* =========================
+   HERO FRAME
+========================= */
+.hero-frame {
+    width: 92%;
+    max-width: 1500px;
+    height: 800px;
+
+    margin: 120px auto 0;
+    padding: 18px;
+
+    border: 2px solid rgba(216,201,163,0.6);
+    box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 1;
+}
+
+.hero-image img:first-child {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 75%;
+}
+
+/* =========================
+   HERO TEXT
+========================= */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    color: #e6e6e6;
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 2px 6px rgba(0,0,0,0.85),
+        0 6px 20px rgba(0,0,0,0.75);
+}
+.hero-text span {
+    font-size: 24px;
+    opacity: 0.85;
+}
+
+.hero-text strong {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.hero-text.left {
+    left: 8%;
+}
+
+.hero-text.right {
+    right: 8%;
+    text-align: right;
+}
+
+/* =========================
+   LOGO
+========================= */
+.hero-logo {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    max-width: 240px;
+    width: 65%;
+
+    filter: drop-shadow(0 0 30px rgba(0,0,0,0.9));
+}
+
+/* =========================
+   FLEET
+========================= */
+.hero-image img:first-child {
+    transition: opacity 0.5s ease;
+}
+
+.fleet {
+    text-align: center;
+}
+
+.fleet-title {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #d8c9a3;
+    letter-spacing: 2px;
+}
+
+.fleet-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fleet-gallery img {
+    width: 220px;
+    height: 140px;
+    object-fit: cover;
+
+    border-radius: 12px;
+    cursor: pointer;
+
+    opacity: 0.6;
+    transform: scale(0.95);
+
+    transition: all 0.35s ease;
+}
+
+.fleet-gallery img:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.fleet-gallery img.active {
+    opacity: 1;
+    transform: scale(1);
+    border: 2px solid rgba(216,201,163,0.8);
+    box-shadow: 0 0 25px rgba(216,201,163,0.4);
+}
+
+.fleet-gallery img.low-focus {
+    object-position: center 70%;
+}
+
+/* Thumbnail */
+.fleet-gallery img.high-focus {
+    object-position: center 40%;
+}
+
+/* Imaginea mare (hero background) */
+.hero-image.high-focus img:first-child {
+    object-position: center 40%;
+}
+
+/* =========================
+   SECTIUNI
+========================= */
+.section {
+    min-height: 100vh;
+    padding: 120px 10%;
+}
+
+.section.alt {
+    background: #0d0d0d;
+}
+
+/* =========================
+   PRICING
+========================= */
+.pricing {
+    text-align: center;
+}
+
+.pricing-title {
+    margin-top: 90px;
+    margin-bottom: 50px;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #d8c9a3;
+}
+
+/* GRID */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CARD */
+.pricing-card {
+    padding: 40px 30px;
+    border-radius: 18px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(10,10,20,0.9),
+        rgba(20,20,30,0.9)
+    );
+
+    border: 1px solid rgba(216,201,163,0.5);
+
+    box-shadow:
+        0 0 50px rgba(0,0,0,0.8),
+        inset 0 0 30px rgba(255,255,255,0.04);
+
+    transition: all 0.4s ease;
+}
+
+/* HOVER */
+.pricing-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 0 70px rgba(216,201,163,0.35),
+        inset 0 0 30px rgba(255,255,255,0.06);
+}
+
+/* FEATURED */
+.pricing-card.featured {
+    border: 2px solid rgba(216,201,163,0.9);
+}
+
+/* TITLU CARD */
+.pricing-card h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #e6d7b0;
+}
+
+/* PREȚ */
+.price {
+    font-size: 48px;
+    color: #d8c9a3;
+    margin-bottom: 25px;
+}
+
+.price span {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* LISTĂ */
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-card li {
+    margin: 10px 0;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* BUTON */
+.pricing-btn {
+    display: inline-block;
+    padding: 10px 26px;
+
+    border: 1px solid rgba(216,201,163,0.8);
+    border-radius: 30px;
+
+    color: #d8c9a3;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    transition: all 0.3s ease;
+}
+
+.pricing-btn:hover {
+    background: rgba(216,201,163,0.15);
+    color: #fff;
+}
+
+
+/* =========================
+   AREAS
+========================= */
+.areas-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: #d8c9a3;
+}
+
+.areas-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 60px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(216,201,163,0.6);
+
+    background-image: url("images/romania.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    box-shadow:
+        0 0 60px rgba(0,0,0,0.9),
+        inset 0 0 40px rgba(255,255,255,0.05);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.areas-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 10, 25, 0.7);
+    z-index: 0;
+}
+
+
+.areas-card p {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: #e6d7b0;
+
+    text-shadow:
+        0 2px 6px rgba(0,0,0,0.9),
+        0 8px 24px rgba(0,0,0,0.85),
+        0 0 12px rgba(216,201,163,0.25);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+.contact-bar {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 56px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(
+        120deg,
+        rgba(5,5,15,0.95),
+        rgba(15,15,25,0.95)
+    );
+
+    border: 1px solid rgba(216,201,163,0.6); /* RAMA INTERIOARĂ */
+    border-radius: 10px;
+}
+
+
+.contact-bar::before {
+    content: "";
+    position: absolute;
+    inset: -16px;
+
+    border: 2px solid rgba(216,201,163,0.7);
+    border-radius: 22px;
+
+    z-index: -1;
+}
+
+.contact-col {
+    color: #e6d7b0;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+.contact-social {
+    text-align: right;
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.social-icons img {
+    width: 22px;
+    height: 22px;
+
+    /* AURIU VIZIBIL NON-HOVER */
+    filter: brightness(1.1);
+
+    transition: all 0.3s ease;
+}
+
+
+.social-icons a:hover img {
+    filter: brightness(1) drop-shadow(0 0 6px rgba(216,201,163,0.8));
+    transform: scale(1.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .hero-frame {
+        height: 350px;
+    }
+
+    .contact-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-social {
+        text-align: center;
+    }
+}
+
+/* Scoate spațiul dintre AREAS și CONTACT */
+#areas {
+    padding-bottom: 60px;
+}
+
+#contact {
+    padding-top: 0;
+}
+
+/* =========================
+   HERO INTRO ANIMATION
+========================= */
+
+.hero-image,
+.hero-text,
+.hero-logo {
+    opacity: 0;
+}
+
+body.loaded .hero-image {
+    animation: fadeIn 1.2s ease forwards;
+}
+
+body.loaded .hero-text.left {
+    animation: slideInLeft 1.4s ease forwards;
+    animation-delay: 0.4s;
+}
+
+body.loaded .hero-text.right {
+    animation: slideInRight 1.4s ease forwards;
+    animation-delay: 0.4s;
+}
+
+body.loaded .hero-logo {
+    animation: fadeInScale 1.8s ease forwards;
+    animation-delay: 0.7s;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translate(-40px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translate(40px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* =========================
+   FLEET EDGE FADE (LUXURY)
+========================= */
+
+
+
+/* Text subtil sub harta */
+.areas-note {
+    margin-top: 18px;
+    text-align: center;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.45);
+
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+#contact {
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 60px;
+}
+
+/* Text subtil sub our chrysler */
+.chrysler-note {
+    margin-top: 8px;
+    text-align: center;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.45);
+
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+    background: #0a0a0a;
+    padding: 24px 30px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.9;
+
+    transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
