@@ -89,3 +89,28 @@ window.addEventListener("load", () => {
     startAutoPlay();
     window.dispatchEvent(new Event("scroll"));
 });
+
+const indicators = document.querySelectorAll(".indicator");
+
+fleetImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        const newBg = img.getAttribute("data-bg");
+
+        if (heroImage.src.includes(newBg)) return;
+
+        heroImage.style.opacity = 0;
+
+        setTimeout(() => {
+            heroImage.src = newBg;
+            heroImage.style.opacity = 1;
+        }, 250);
+
+        // active thumbnail
+        fleetImages.forEach(i => i.classList.remove("active"));
+        img.classList.add("active");
+
+        // active indicator
+        indicators.forEach(ind => ind.classList.remove("active"));
+        indicators[index].classList.add("active");
+    });
+});
