@@ -569,6 +569,28 @@ nav ul li a:hover {
     padding-bottom: 60px;
 }
 
+.seo-hidden {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+
+    width: 1px;
+    height: 1px;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+
+    white-space: nowrap;
+    border: 0;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* =========================
    HERO INTRO ANIMATION
 ========================= */
@@ -947,6 +969,9 @@ body.loaded .hero-logo {
         font-size: 16px;
     }
 
+
+}
+
     /* ===== FOOTER ===== */
     .footer-content {
         flex-direction: column;
@@ -954,3 +979,5 @@ body.loaded .hero-logo {
         gap: 12px;
     }
 }
+
+
