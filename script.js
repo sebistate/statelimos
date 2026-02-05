@@ -1,3 +1,46 @@
+
+function loadAnalytics() {
+  if (window.analyticsLoaded) return; // 🛑 evită dublu load
+  window.analyticsLoaded = true;
+
+  const script = document.createElement('script');
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-1CWHGGP30P";
+  script.async = true;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-1CWHGGP30P');
+}
+
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', 'true');
+  document.getElementById('cookie-banner')?.remove();
+  loadAnalytics();
+}
+
+function refuseCookies() {
+  localStorage.setItem('cookiesAccepted', 'false');
+  document.getElementById('cookie-banner')?.remove();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const consent = localStorage.getItem('cookiesAccepted');
+
+  if (consent === 'true') {
+    loadAnalytics();
+    document.getElementById('cookie-banner')?.remove();
+  }
+
+  if (consent === 'false') {
+    document.getElementById('cookie-banner')?.remove();
+  }
+});
+
+
+
+
 /* =========================
    HERO IMAGE + FLEET SLIDER
 ========================= */
@@ -114,3 +157,4 @@ fleetImages.forEach((img, index) => {
         indicators[index].classList.add("active");
     });
 });
+

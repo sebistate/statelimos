@@ -1,3 +1,13 @@
+.contact-social a img {
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+}
+
+.contact-social a:hover img {
+    filter: brightness(1.2) sepia(1) hue-rotate(25deg);
+}
+
+
 /* =========================
    FONT
 ========================= */
@@ -27,6 +37,127 @@ body {
     background: #000;
     color: #fff;
 }
+
+/* ======================
+   COOKIE BANNER
+====================== */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1100px;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 9999;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 12px;
+    margin-left: auto; /* ⭐ AICI e magia */
+}
+.cookie-banner p {
+    font-size: 14px;
+    color: #d0d0d0;
+    max-width: 700px;
+}
+
+.cookie-banner a {
+    color: #c9a44c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cookie-banner a:hover {
+    text-decoration: underline;
+}
+
+/* ======================
+   COOKIE BUTTONS
+====================== */
+
+.cookie-banner button {
+    font-family: inherit;
+    font-size: 13px;
+    padding: 9px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* ACCEPT */
+.cookie-banner button:first-of-type {
+    background: linear-gradient(135deg, #c9a44c, #e3c77a);
+    color: #111;
+    font-weight: 600;
+}
+
+.cookie-banner button:first-of-type:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(201,164,76,0.45);
+}
+
+/* REFUSE */
+.cookie-banner button:last-of-type {
+    background: transparent;
+    color: #aaa;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.cookie-banner button:last-of-type:hover {
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+}
+
+.cookie-banner {
+    animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .cookie-banner p {
+        font-size: 13px;
+    }
+
+    .cookie-banner button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 
 /* =========================
    HEADER + MENIU
@@ -111,7 +242,7 @@ nav ul li a:hover {
 .hero-frame {
     width: 68%;          /* era 92% */
     max-width: 1400px;   /* era 1500px */
-    height: 740px;       /* era 800px */
+    height: 640px;       /* era 800px */
 
     margin: 0 auto;
     padding: 16px;       /* rama mai fină */
@@ -311,6 +442,7 @@ nav ul li a:hover {
 
 /* BEST SELLER BADGE */
 .bestseller-badge {
+    pointer-events: none; /* ⭐ CHEIA */
     position: absolute;
     top: 28px;
     right: 0px;

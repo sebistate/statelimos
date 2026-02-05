@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "State Limos",
+  "image": "https://statelimos.ro/images/logo.png",
+  "telephone": "+40756941230",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "RO"
+  },
+  "areaServed": ["Suceava", "Iași", "Bacău", "Neamț", "Vaslui", "Botoșani"],
+  "url": "https://statelimos.ro"
+}
+</script>
+
     <link rel="icon" type="image/png" href="images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Limuzina premium de închiriat pentru nunți, banchete, baluri în județele Suceava, Iași, Vaslui, Botoșani, Neamț, Bacău și Republica Moldova.">
+    <meta name="description" content="Limuzine premium de închiriat pentru nunți, banchete, baluri și eveniemnte VIP în toată România și Republica Moldova. Șofer profesionist. Booking rapid.">
     <meta name="author" content="State Gabriel-Sebastian PFA">
     <meta name="keywords" content="StateLimos, Limousine, Rental, Limuzina, Inchiriat, VIP, Premium, Luxury, Nunta, Banchet, Bal, Chrysler, Iasi, Suceava, Vaslui, Botosani, Bacau, Neamt">
     <title>State Limos | Limousine Rental Romania</title>
 <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
+
+<div class="cookie-banner" id="cookie-banner">
+    <p>
+        Acest site folosește cookie-uri pentru analiza traficului.
+        <a href="cookies.html">Află mai multe</a>
+    </p>
+
+    <div class="cookie-actions">
+        <button onclick="acceptCookies()">Accept</button>
+        <button onclick="refuseCookies()">Refuz</button>
+    </div>
+</div>
 
 <header>
     <nav>
@@ -23,6 +52,9 @@
         </ul>
     </nav>
 </header>
+<h1 class="seo-hidden">
+Luxury Limousine Services in Romania – State Limousines
+</h1>
 <section id="acasa" class="hero-frame">
 <div class="hero-image">
     <img src="images/arte.jpeg" alt="Luxury Chrysler 300C Stretch Limousine">
@@ -32,7 +64,11 @@
         <strong>SERVICE.</strong>
     </div>
 
-    <img src="images/logo.png" alt="State Limos" class="hero-logo">
+<img src="images/logo.png"
+     class="hero-logo"
+     loading="lazy"
+     alt="State Limos – servicii de închiriere limuzină premium">
+
 
     <div class="hero-text right">
         <span>EXPERIENCE</span><br>
@@ -49,12 +85,12 @@
 Experience the difference with our Chrysler 300C American stretch limousine — seating up to 10 guests.
     </p>
     <div class="fleet-gallery">
-        <img src="images/arte.jpeg" data-bg="images/arte.jpeg" class="active">
-        <img src="images/interior.jpg" data-bg="images/interior.jpg">
-	<img src="images/interiorled.jpeg" data-bg="images/interiorled.jpeg" class="high-focus">
-	<img src="images/hotel.jpeg" data-bg="images/hotel.jpeg" class="low-focus">
-	<img src="images/poland.jpeg" data-bg="images/poland.jpeg">
-	<img src="images/fuji.jpeg" data-bg="images/fuji.jpeg">
+        <img src="images/arte.webp" data-bg="images/arte.webp" alt="Limuzină luxury State Limos" class="active>
+        <img src="images/interior.jpg" loading="lazy" data-bg="images/interior.jpg">
+	<img src="images/interiorled.jpeg" loading="lazy" data-bg="images/interiorled.jpeg" class="high-focus">
+	<img src="images/hotel.jpeg" loading="lazy" data-bg="images/hotel.jpeg" class="low-focus">
+	<img src="images/poland.jpeg" loading="lazy" data-bg="images/poland.jpeg">
+	<img src="images/fuji.jpeg" loading="lazy" data-bg="images/fuji.jpeg">
     </div>
 <div class="fleet-indicators">
     <span class="indicator active"></span>
@@ -98,7 +134,8 @@ Experience the difference with our Chrysler 300C American stretch limousine — 
         <div class="pricing-card featured">
 
             <h3>STANDARD</h3>
-    <img src="icons/bestseller.png" alt="Best Seller" class="bestseller-badge">
+    <img src="icons/bestseller.png" 
+     alt="Pachet limuzină cel mai popular – State Limos" class="bestseller-badge">
             <div class="price">
                 €75 <span>/ oră</span>
             </div>
@@ -178,9 +215,9 @@ Experience the difference with our Chrysler 300C American stretch limousine — 
         <div class="contact-item">
             <span class="contact-label">FOLLOW US</span>
             <div class="contact-social">
-                <a href="https://www.instagram.com/statelimos/"><img src="icons/instagram.svg"></a>
-                <a href="https://www.facebook.com/statelimos"><img src="icons/facebook.svg"></a>
-                <a href="https://www.tiktok.com/@statelimos"><img src="icons/tiktok.svg"></a>
+                <a href="https://www.instagram.com/statelimos/"><img src="icons/instagram.svg" loading="lazy" alt="Instagram State Limos"></a>
+                <a href="https://www.facebook.com/statelimos"><img src="icons/facebook.svg" loading="lazy" alt="Facebook State Limos"></a>
+                <a href="https://www.tiktok.com/@statelimos"><img src="icons/tiktok.svg" loading="lazy" alt="TikTok State Limos"></a>
             </div>
         </div>
     </div>
@@ -190,7 +227,7 @@ Experience the difference with our Chrysler 300C American stretch limousine — 
    class="whatsapp-float" 
    target="_blank" 
    aria-label="Contact us on WhatsApp">
-    <img src="icons/whatsapp.svg" alt="WhatsApp">
+	<img src="icons/whatsapp.svg" alt="Contact rapid WhatsApp – State Limos limuzină">
     <span>WHATSAPP</span>
 </a>
 
@@ -200,17 +237,19 @@ Experience the difference with our Chrysler 300C American stretch limousine — 
 <footer class="site-footer">
     <div class="footer-content">
         <span class="footer-text">
-            © StateLimos. State Gabriel-Sebastian Persoană Fizică Autorizată. Toate drepturile rezervate.
+            © StateLimos. State Gabriel-Sebastian PFA. CUI: 53688629. Suceava, Mircea Hrișcă 23.  Toate drepturile rezervate.
         </span>
 
         <nav class="footer-links">
-            <a href="#">Politica de confidențialitate</a>
-            <a href="#">Termene și condiții</a>
+            <a href="confidentialitate.html">Politica de confidențialitate</a>
+            <a href="conditii.html">Termene și condiții</a>
         </nav>
     </div>
+<p class="seo-hidden"> Luxury limousine rental services available in Suceava, Iași, Bacău, Neamț, Vaslui și Botoșani. </p>
 </footer>
+<p class="seo-hidden">
+Luxury limousine rental services available in Suceava, Iași, Bacău, Neamț, Vaslui și Botoșani.
+</p>
 </body>
 </html>
-
-
 
